@@ -1,4 +1,5 @@
-# Lite Rutube Embed
+# Lite Rutube Embed 
+![GitHub file size in bytes](https://img.shields.io/github/size/evikza/lite-rutube-embed/lite-rutube-embed.js)
 
 Легковесный скрипт для отображения видео Rutube. С последующией подгрузкой ```iframe```.
 
@@ -28,3 +29,5 @@
 ```html
 <lite-rutubevideoid="60ec082e53dd8e0cf4c9087df5f54c46" start="107" end="401" autoplay></lite-rutube>
 ```
+
+[Демонстрация](https://evikza.github.io/lite-rutube-embed/example.html)
