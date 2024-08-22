@@ -30,74 +30,76 @@ class LiteRutubeEmbed extends HTMLElement {
 
     shadow.innerHTML = `
 			<style>
-       :host {
-							contain: content;
-							display: block;
-							background: #eeeeee;
-							position: relative;
-							width: 100%;
-							padding-bottom: calc(100% / (16 / 9));
-						}
+				:host {
+					contain: content;
+					display: block;
+					background: #eeeeee;
+					position: relative;
+					width: 100%;
+					padding-bottom: calc(100% / (16 / 9));
+				}
 
-					.prependerFrame {
-							cursor: pointer;
-						}
+				.prependerFrame {
+					cursor: pointer;
+				}
 
-						.prependerFrame, .thumbnailImage, iframe {
-								position: absolute;
-								width: 100%;
-								height: 100%;
-								left: 0;
-						}
+				.prependerFrame, .thumbnailImage, iframe {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+				}
 
-						.thumbnailImage {
-								object-fit: cover;
-						}
+				.thumbnailImage {
+					object-fit: cover;
+				}
 						
-						.playVideoButton {
-								background: #00a4e1;
-								height: 48px;
-								width: 48px;
-						 }
+				.playVideoButton {
+					background: #00a4e1;
+					height: 48px;
+					width: 48px;
+				}
 
-						.playVideoButton, .playVideoButton:before {
-								position: absolute;
-								top: 50%;
-								left: 50%;
-								transform: translate3d(-50%, -50%, 0);
-								cursor: inherit;
-						 }
+				.playVideoButton, .playVideoButton:before {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate3d(-50%, -50%, 0);
+					cursor: inherit;
+				}
 							
-						.playVideoButton {
-								z-index: 1;
-								border: 0;
-								border-radius: 8px;
-						 }
-							.buttonPlayImage {
-							 display: flex;
-							 justify-content: center;
-							}
-							.buttonPlayImage svg {
-							  height: 24px;
- 						  width: 24px;
-							}
+				.playVideoButton {
+					z-index: 1;
+					border: 0;
+					border-radius: 8px;
+				}
+
+				.buttonPlayImage {
+					display: flex;
+					justify-content: center;
+				}
+
+				.buttonPlayImage svg {
+					height: 24px;
+					width: 24px;
+				}
 							
-							.prependerFrame.available > .playVideoButton {
- 						  display: none;
-							}
+				.prependerFrame.available > .playVideoButton {
+					display: none;
+				}
 			</style>
 			<div class="prependerFrame">
-    <picture>
-				<source id="typeSourceImage" type="image/jpeg">
-				<img src="https://rutube.ru/api/video/${this.videoId}/thumbnail/?redirect=1" class="thumbnailImage" loading="lazy">
-			</picture>
-			<button class="playVideoButton" type="button">
-				<div class="buttonPlayImage">
-				<svg data-testid="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l10-7L8 5Z" fill="white" stroke="white" stroke-width="1.24" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-				</div>
-			</button>
+    		<picture>
+					<source id="typeSourceImage" type="image/jpeg">
+					<img src="https://rutube.ru/api/video/${this.videoId}/thumbnail/?redirect=1" class="thumbnailImage" loading="lazy">
+				</picture>
+				<button class="playVideoButton" type="button">
+					<div class="buttonPlayImage">
+						<svg data-testid="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l10-7L8 5Z" fill="white" stroke="white" stroke-width="1.24" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+					</div>
+				</button>
 			</div>
-   `;
+   	`;
 
     this.ref = shadow.querySelector('.prependerFrame');
   }
